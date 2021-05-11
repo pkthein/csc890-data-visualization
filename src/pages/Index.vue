@@ -3,11 +3,11 @@
     <div class="full-width q-pa-sm">
       <div class="row q-gutter-x-sm" style="height: 52vh;">
         <q-card bordered flat class="col-8 full">
-          <strong class="q-ml-sm text-h6">Map of United States{{ state ? `, ${state}` : '' }} </strong>
+          <strong class="q-ml-sm text-h6">Map of {{ state ? `${state}, ` : '' }}United States</strong>
           <q-separator />
           <div class="flex flex-center" style="positon: relative; height: 90%; width: 98%; margin: 0 auto;">
             <q-img
-              :src="map ? map : '../img/USA.png'"
+              :src="map"
               contain
               height="45vh"
             />
@@ -88,12 +88,12 @@ export default {
     return {
       state: null,
       city: null, // not used
-      map: null,
+      map: require('../../public/USA.png'),
       options: [
         null, 'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
       ],
       mapOptions: {
-        null: require('../assets/img/USA.png'), Alabama: require('../assets/img/alabama.png'), Alaska: require('../assets/img/alaska.png'), Arizona: require('../assets/img/arizona.png'), Arkansas: require('../assets/img/arkansas.png'), California: require('../assets/img/california.png'), Nevada: require('../assets/img/nevada.png')
+        null: require('../../public/USA.png'), Alabama: require('../../public/alabama.png'), Alaska: require('../../public/alaska.png'), Arizona: require('../../public/arizona.png'), Arkansas: require('../../public/arkansas.png'), California: require('../../public/california.png'), Nevada: require('../../public/nevada.png')
       },
       dateRange: null,
       model: { from: null, to: null },
